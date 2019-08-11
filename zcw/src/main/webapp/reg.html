@@ -38,11 +38,11 @@
               <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
 		  <div class="form-group has-success has-feedback">
-			<input type="text" class="form-control" id="userpswd" name="userpswd" placeholder="请输入登录密码" style="margin-top:10px;">
+			<input type="text" class="form-control" id="userpswd" name="userpswd" placeholder="请输入8-20位密码" style="margin-top:10px;">
 			<span class="glyphicon glyphicon-lock form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-success has-feedback">
-			<input type="text" class="form-control" id="email" name="email" placeholder="请输入邮箱地址" style="margin-top:10px;">
+			<input type="text" class="form-control" id="email" name="email" placeholder="请输入可用的邮箱地址" style="margin-top:10px;">
 			<span class="glyphicon glyphicon glyphicon-envelope form-control-feedback"></span>
 		  </div>
 		  <div class="form-group has-success has-feedback">
@@ -59,12 +59,46 @@
             <a href="login.html">我有账号</a>
           </label>
         </div>
-        <a class="btn btn-lg btn-success btn-block" onclick="formSubmit()" href="javascript:void(0)" > 注册</a>
+        <a class="btn btn-lg btn-success btn-block" id="reg_sub" onclick="formSubmit()" href="javascript:void(0)" > 注册</a>
       </form>
     </div>
     <script src="jquery/jquery-2.1.1.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
+        /*function checksLoginacct(){
+            var loginacct = $("#loginacct").val();
+            var reg_loginacct = /^w{6,20}$/;
+            var flag = reg_loginacct.test(loginacct);
+            if (flag){
+                $("#loginacct").css("border","1px solid green");
+            }else{
+                $("#loginacct").css("border","1px solid red");
+            }
+            return flag;
+        }
+        function checkEmail(){
+            var email = $("#email").val();
+            //1780932@qq.com
+            var reg_email = /^\w+@\w+\.\w+$/;
+            var flag = reg_email.test(email);
+            if (flag){
+                $("#email").css("border","1px solid green");
+            }else {
+                $("#email").css("border","1px solid red");
+            }
+            return flag;
+        }
+        $(function () {
+            $("#reg_sub").submit(function () {
+                if (checkEmail() && checksLoginacct()){
+                    $("#reg_sub");
+                }
+            })
+            $(checkEmail()).blur();
+            $(checksLoginacct()).blur();
+        })*/
+
         function formSubmit() {
             var formObj = document.getElementById("userForm");
             formObj.submit();//手动提交表单
